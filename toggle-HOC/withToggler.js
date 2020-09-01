@@ -14,10 +14,8 @@ class Toggler extends Component {
   };
 
   render() {
-    const Component = this.props.component;
-    return (
-      <Component on={this.state.on} toggle={this.toggle} {...this.props} />
-    );
+    const { component: C, defaultOnValue, ...props } = this.props;
+    return <C on={this.state.on} toggle={this.toggle} {...props} />;
   }
 }
 
